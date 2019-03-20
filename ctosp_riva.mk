@@ -20,8 +20,11 @@ DEVICE_PATH := device/xiaomi/riva
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/ctosp/config/common_full_phone.mk)
+# Inherit some common Lineage stuff
+TARGET_GAPPS_ARCH := arm64
+TARGET_DENSITY := xhdpi
+TARGET_BOOT_ANIMATION_RES := 720
+$(call inherit-product, vendor/ctosp/config/common.mk)
 
 # Inherit from riva device
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
